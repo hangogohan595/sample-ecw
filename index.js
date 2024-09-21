@@ -36,9 +36,10 @@ const buyerRoutes = require('./routes/buyer/authRoutes');
 const cartRoutes = require('./routes/buyer/cartRoutes');
 const reviewRoutes = require('./routes/buyer/reviewRoutes');
 
-// const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL;
 
-mongoose.connect('mongodb://localhost:27017/ecw-gohanhango');
+// mongoose.connect('mongodb://localhost:27017/ecw-gohanhango');
+mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection: error: '));
@@ -57,7 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(mongoSanitize());
 
 const store = MongoStore.create({
-    mongoUrl: 'mongodb://localhost:27017/ecw-gohanhango',
+    mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
     crypto: {
         secret: 'notasecret'
