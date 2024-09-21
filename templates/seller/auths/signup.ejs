@@ -1,35 +1,35 @@
 <% layout('layouts/boilerplate') %>
-    <h1 class="text-center">Sign Up</h1>
-    <form class="needs-validation" action="/s/signup" method="POST" novalidate>
-        <div class="mb-3">
-            <label class="form-label" for="email">Email</label>
-            <input class="form-control" type="email" name="seller[email]" id="email" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please enter a valid email
-            </div>
+<h1 class="text-center">Sign Up</h1>
+<form class="needs-validation" action="/s/signup" method="POST" novalidate>
+    <div class="mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" type="email" name="seller[email]" id="email" required>
+        <div class="valid-feedback">
+            Looks good!
         </div>
-        <div class="mb-3">
-            <label class="form-label" for="username">Username</label>
-            <input class="form-control" type="text" name="seller[username]" id="username" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please enter a username
-            </div>
+        <div class="invalid-feedback">
+            Please enter a valid email
         </div>
-        <div class="mb-3">
-            <label class="form-label" for="password">Password</label>
-            <input class="form-control" type="password" name="seller[password]" id="password" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please enter a password
-            </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="username">Username</label>
+        <input class="form-control" type="text" name="seller[username]" id="username" required>
+        <div class="valid-feedback">
+            Looks good!
         </div>
-        <button class="btn btn-success">Submit</button>
-    </form>
+        <div class="invalid-feedback">
+            Please enter a username
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" name="seller[password]" id="password" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter a password
+        </div>
+    </div>
+    <button class="btn btn-success">Submit</button>
+</form>

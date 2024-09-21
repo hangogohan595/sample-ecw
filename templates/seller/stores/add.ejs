@@ -1,60 +1,59 @@
 <% layout('layouts/boilerplate') %>
-    <div class="row">
-        <h1 class="text-center">Register Store</h1>
-        <div class="col-md-6 offset-md-3">
-            <form class="needs-validation" action="/s/stores" method="POST" novalidate>
-                <div class="mb-3">
-                    <label class="form-label" for="store-name">Store Name</label>
-                    <input class="form-control" type="text" name="store[name]" id="store-name" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please enter your store name
-                    </div>
+<div class="row">
+    <h1 class="text-center">Register Store</h1>
+    <div class="col-md-6 offset-md-3">
+        <form class="needs-validation" action="/s/stores" method="POST" novalidate>
+            <div class="mb-3">
+                <label class="form-label" for="store-name">Store Name</label>
+                <input class="form-control" type="text" name="store[name]" id="store-name" required>
+                <div class="valid-feedback">
+                    Looks good!
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" for="store-phone">Phone Number</label>
-                    <input class="form-control" type="text" name="store[phone]" id="store-phone" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please enter your phone number
-                    </div>
+                <div class="invalid-feedback">
+                    Please enter your store name
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" for="store-address">Address</label>
-                    <input class="form-control" type="text" name="store[address]" id="store-address" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please enter store address
-                    </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="store-phone">Phone Number</label>
+                <input class="form-control" type="text" name="store[phone]" id="store-phone" required>
+                <div class="valid-feedback">
+                    Looks good!
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" for="store-logo">Logo Url</label>
-                    <input class="form-control" type="text" name="store[logo]" id="store-logo" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please enter logo url
-                    </div>
+                <div class="invalid-feedback">
+                    Please enter your phone number
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" for="store-banner">Banner Url</label>
-                    <input class="form-control" type="text" name="store[banner]" id="store-banner" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please enter banner url
-                    </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="store-address">Address</label>
+                <input class="form-control" type="text" name="store[address]" id="store-address" required>
+                <div class="valid-feedback">
+                    Looks good!
                 </div>
-                <button class="btn btn-success me-3">Submit</button><a class="btn btn-danger"
-                    href="/s/stores">Cancel</a>
-            </form>
-        </div>
+                <div class="invalid-feedback">
+                    Please enter store address
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="store-logo">Logo Url</label>
+                <input class="form-control" type="text" name="store[logo]" id="store-logo" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter logo url
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="store-banner">Banner Url</label>
+                <input class="form-control" type="text" name="store[banner]" id="store-banner" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter banner url
+                </div>
+            </div>
+            <button class="btn btn-success me-3">Submit</button><a class="btn btn-danger" href="/s/stores">Cancel</a>
+        </form>
     </div>
+</div>

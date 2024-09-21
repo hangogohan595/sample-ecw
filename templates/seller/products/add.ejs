@@ -1,19 +1,19 @@
 <% layout('layouts/boilerplate') %>
-    <h1 class="text-center">Add Product</h1>
-    <form class="needs-validation" action="/s/stores/<%= id %>/products" method="POST" enctype="multipart/form-data"
-        novalidate>
-        <div class="mb-3">
-            <label class="form-label" for="product-name">Product Name</label>
-            <input class="form-control" type="text" name="product[name]" id="product-name" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please enter a product name
-            </div>
+<h1 class="text-center">Add Product</h1>
+<form class="needs-validation" action="/s/stores/<%= id %>/products" method="POST" enctype="multipart/form-data"
+    novalidate>
+    <div class="mb-3">
+        <label class="form-label" for="product-name">Product Name</label>
+        <input class="form-control" type="text" name="product[name]" id="product-name" required>
+        <div class="valid-feedback">
+            Looks good!
         </div>
-        <input type="file" name="product[image]" multiple>
-        <!-- <div class="mb-3">
+        <div class="invalid-feedback">
+            Please enter a product name
+        </div>
+    </div>
+    <input type="file" name="product[image]" multiple>
+    <!-- <div class="mb-3">
             <label class="form-label" for="product-image">Image Url</label>
             <input class="form-control" type="text" name="product[image]" id="product-image" required>
             <div class="valid-feedback">
@@ -23,39 +23,39 @@
                 Please enter image url
             </div>
         </div> -->
-        <div class="mb-3">
-            <label class="form-label" for="product-quantity">Quantity</label>
-            <input class="form-control" type="text" name="product[quantity]" id="product-quantity" required>
+    <div class="mb-3">
+        <label class="form-label" for="product-quantity">Quantity</label>
+        <input class="form-control" type="text" name="product[quantity]" id="product-quantity" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter a quantity
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="product-price">Price</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input name="product[price]" id="product-price" type="text" class="form-control" placeholder="0.00"
+                aria-label="Amount (to the nearest dollar)" required>
             <div class="valid-feedback">
                 Looks good!
             </div>
             <div class="invalid-feedback">
-                Please enter a quantity
+                Please enter a price
             </div>
         </div>
-        <div class="mb-3">
-            <label class="form-label" for="product-price">Price</label>
-            <div class="input-group mb-3">
-                <span class="input-group-text">$</span>
-                <input name="product[price]" id="product-price" type="text" class="form-control" placeholder="0.00"
-                    aria-label="Amount (to the nearest dollar)" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-                <div class="invalid-feedback">
-                    Please enter a price
-                </div>
-            </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="product-description">Description</label>
+        <textarea class="form-control" name="product[description]" id="product-description" required></textarea>
+        <div class="valid-feedback">
+            Looks good!
         </div>
-        <div class="mb-3">
-            <label class="form-label" for="product-description">Description</label>
-            <textarea class="form-control" name="product[description]" id="product-description" required></textarea>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please provide a description
-            </div>
+        <div class="invalid-feedback">
+            Please provide a description
         </div>
-        <button class="btn btn-success me-3">Submit</button><a class="btn btn-danger" href="/s/stores">Cancel</a>
-    </form>
+    </div>
+    <button class="btn btn-success me-3">Submit</button><a class="btn btn-danger" href="/s/stores">Cancel</a>
+</form>
