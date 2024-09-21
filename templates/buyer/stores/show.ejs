@@ -1,0 +1,68 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div>
+            <div style="display: flex; justify-content: space-between">
+                <img crossorigin="anonymous" id="banner-image" src="<%= store.logo %>" alt="store banner">
+                <div id="map" style="width: 250px; height: 250px"></div>
+            </div>
+            <h1 class="display-4">
+                <%= store.name %>
+            </h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+                to featured content or information.</p>
+            <hr class="my-4">
+        </div>
+    </div>
+
+    <div class="row">
+        <% for (let product of products) { %>
+            <div class="mb-3 d-flex col-md-3">
+                <div class="card">
+                    <div class="card text-center">
+                        <div id="carouselExample<%= product._id %>" class="carousel slide">
+                            <div class="carousel-inner">
+                                <% product.images.forEach((image, i)=> { %>
+                                    <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                                        <img crossorigin="anonymous" src="<%= image.url %>" class="d-block w-100" alt="product-image">
+                                    </div>
+                                    <% }) %>
+                            </div>
+                            <% if (product.images.length> 1) { %>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExample<%= product._id %>" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExample<%= product._id %>" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                                <% } %>
+                        </div>
+                        <h5 class="card-header text-truncate" style="max-height: 60px; overflow: hidden;">
+                            <%= product.name %>
+                        </h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                $ <%= product.price %>.00
+                            </h5>
+                            <a href="/b/products/<%= product._id %>" class="btn btn-primary">View</a>
+                            <form action="/b/cart/<%= product._id %>?type=cart" method="POST" style="display: inline">
+                                <button class="btn btn-info">Add to Cart</button>
+                            </form>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <%= product.updatedAt %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>
+
+    <script>
+        const mapToken = '<%- process.env.MAPBOX_TOKEN %>';
+        const store = JSON.parse('<%- JSON.stringify(store) %>');
+    </script>
+    <script src="/javascripts/showStoreMap.js"></script>

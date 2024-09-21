@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+    <h1 class="text-center">All Stores</h1>
+    <% for (let store of stores) { %>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <img crossorigin="anonymous" class="image-fluid" src="<%= store.logo %>" alt="store logo">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <%= store.name %>
+                        </h4>
+                        <a class="btn btn-primary mb-3" href="/s/stores/<%= store._id %>">View Store</a>
+                        <h5 class="card-text">
+                            Brand: <%= store.seller.username %>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>

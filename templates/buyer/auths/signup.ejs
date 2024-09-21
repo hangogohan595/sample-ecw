@@ -1,0 +1,79 @@
+<% layout('layouts/boilerplate') %>
+    <h1 class="text-center">Sign Up</h1>
+    <form class="needs-validation" action="/b/signup" method="POST" novalidate>
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label class="form-label" for="firstName">First Name</label>
+                <input class="form-control" type="text" name="buyer[firstName]" id="firstName" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a valid email
+                </div>
+            </div>
+            <div class="col-6 mb-3">
+                <label class="form-label" for="lastName">Last Name</label>
+                <input class="form-control" type="text" name="buyer[lastName]" id="lastName" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a valid email
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label class="form-label" for="phone">Phone Number</label>
+                <input class="form-control" type="text" name="buyer[phone]" id="phone" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a username
+                </div>
+            </div>
+            <div class="col-6 mb-3">
+                <label class="form-label" for="address">Address</label>
+                <input class="form-control" type="text" name="buyer[address]" id="address" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a username
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" name="buyer[email]" id="email" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please enter a valid email
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" name="buyer[username]" id="username" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please enter a username
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" name="buyer[password]" id="password" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please enter a password
+            </div>
+        </div>
+        <button class="btn btn-success">Submit</button>
+    </form>

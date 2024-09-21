@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate') %>
+    <h1 class="text-center">Cart</h1>
+    <% for (let item of cart) { %>
+        <div class="card mb-3" style="max-width: 900px;">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img crossorigin="anonymous" src="<%= item.product.image %>" class="img-fluid rounded-start" alt="product image"
+                        style="max-width: 225px">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= item.product.name %>
+                        </h5>
+                        <form action="/b/cart/<%= item.product._id %>?_method=PUT" method="POST">
+                            <button class="btn btn-primary mb-3">Remove from cart</button>
+                        </form>
+                        <h5 class="card-title">
+                            Quantity: <%= item.quantity %>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
