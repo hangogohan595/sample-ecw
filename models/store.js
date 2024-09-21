@@ -32,14 +32,15 @@ const storeSchema = new Schema({
         }
     },
     logo: {
-        type: String,
+        type: String
     },
     banner: {
-        type: String,
+        type: String
     }
 }, {
-    timestamps: true
-}, opts);
+    timestamps: true,
+    ...opts
+});
 
 storeSchema.virtual('properties.popUpMarkup').get(function () {
     return `<a href="/b/stores/${this._id}">${this.name}</a><b><p>${this.address}</p>`

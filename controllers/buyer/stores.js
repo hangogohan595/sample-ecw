@@ -3,8 +3,8 @@ const Product = require('../../models/product');
 
 module.exports.mainStores = async (req, res) => {
     const stores = await Store.find({}).populate('seller');
-    const popStores = stores.map(store => store.toJSON({ virtuals: true }));
-    res.render('buyer/stores/main', { stores, popStores });
+    console.log("App 2");
+    res.render('buyer/stores/main', { stores });
 }
 
 module.exports.showStore = async (req, res) => {

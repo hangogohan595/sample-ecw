@@ -21,6 +21,5 @@ module.exports.showProduct = async (req, res, next) => {
         req.flash('error', 'Product not found');
         return res.redirect(`/products`);
     }
-    console.log(product);
     res.render('buyer/products/show', { product, currentUser });
 }
