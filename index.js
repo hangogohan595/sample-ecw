@@ -7,14 +7,10 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
-const Product = require('./models/product');
-const Store = require('./models/store');
-const Review = require('./models/review');
 const Seller = require('./models/seller.js');
 const Buyer = require('./models/buyer.js');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
-const catchAsync = require('./utils/catchAsync');
 const AppError = require('./utils/AppError');
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -37,8 +33,8 @@ const cartRoutes = require('./routes/buyer/cartRoutes');
 const reviewRoutes = require('./routes/buyer/reviewRoutes');
 
 const dbUrl = process.env.DB_URL;
+// const dbUrl = 'mongodb://localhost:27017/ecw-gohanhango';
 
-// mongoose.connect('mongodb://localhost:27017/ecw-gohanhango');
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;

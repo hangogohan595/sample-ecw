@@ -3,7 +3,6 @@ const Product = require('../../models/product');
 
 module.exports.mainStores = async (req, res) => {
     const stores = await Store.find({}).populate('seller');
-    console.log("App 2");
     res.render('buyer/stores/main', { stores });
 }
 
