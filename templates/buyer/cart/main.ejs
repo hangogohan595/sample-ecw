@@ -1,25 +1,42 @@
 <% layout('layouts/boilerplate') %>
 <h1 class="text-center">Cart</h1>
 <% for (let item of cart) { %>
+
 <div class="card mb-3" style="max-width: 900px;">
     <div class="row g-0">
-        <div class="col-md-3">
-            <img crossorigin="anonymous" src="<%= item.product.image %>" class="img-fluid rounded-start"
-                alt="product image" style="max-width: 225px">
+        <div id="carouselExample<%= item.product._id %>" class="carousel slide col-md-4">
+            <div class="carousel-inner">
+                <% item.product.images.forEach((image, i)=> { %>
+                <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                    <img crossorigin="anonymous" src="<%= image.url %>" class="d-block w-100" alt="product-image">
+                </div>
+                <% }) %>
+            </div>
+            <% if (item.product.images.length> 1) { %>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample<%= item.product._id %>"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample<%= item.product._id %>"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            <% } %>
         </div>
-        <div class="col-md-9">
+
+        <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">
-                    <%= item.product.name %>
-                </h5>
+                <h3 class="card-title"><%= item.product.name %></h3>
                 <form action="/b/cart/<%= item.product._id %>?_method=PUT" method="POST">
                     <button class="btn btn-primary mb-3">Remove from cart</button>
                 </form>
-                <h5 class="card-title">
-                    Quantity: <%= item.quantity %>
+                <h5 class="card-text"><small class="text-body-secondary">Quantity: <%= item.quantity %></small>
                 </h5>
             </div>
         </div>
     </div>
 </div>
+
 <% } %>

@@ -3,7 +3,6 @@ const Cart = require('../../models/cart');
 const Wishlist = require('../../models/wishlist');
 
 module.exports.mainCarts = async (req, res) => {
-    const buyer = await Buyer.findById(req.user.id);
     const cart = await Cart.find({ buyer: req.user.id }).populate('product');
     res.render(`buyer/cart/main`, { cart });
 }
